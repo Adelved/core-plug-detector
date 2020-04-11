@@ -1,0 +1,26 @@
+<annotation>
+	<folder>all_cores</folder>
+	<filename>6406_3_2_3964_3964,25.jpg</filename>
+	<path>/home/dennis/Documents/object_detection_coreplug/Geoprovider/public core images crop 3570m public core images from mid norway/all_cores/6406_3_2_3964_3964,25.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>209</width>
+		<height>545</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hplug</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>123</xmin>
+			<ymin>357</ymin>
+			<xmax>194</xmax>
+			<ymax>428</ymax>
+		</bndbox>
+	</object>
+</annotation>
