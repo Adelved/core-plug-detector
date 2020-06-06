@@ -1,0 +1,26 @@
+<annotation>
+	<folder>gray_test</folder>
+	<filename>6506_12_3_4002_4003.jpg</filename>
+	<path>/home/dennis/Documents/object_detection_coreplug/core_plug_data/images/gray_test/6506_12_3_4002_4003.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>263</width>
+		<height>2094</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hplug</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>130</xmin>
+			<ymin>552</ymin>
+			<xmax>219</xmax>
+			<ymax>638</ymax>
+		</bndbox>
+	</object>
+</annotation>
