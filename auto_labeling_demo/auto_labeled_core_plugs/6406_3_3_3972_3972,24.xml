@@ -1,0 +1,14 @@
+<annotation>
+	<folder>autolabel</folder>
+	<filename>6406_3_3_3972_3972,24.jpg</filename>
+	<path>/home/dennis/anaconda3/envs/gputest/models/research/object_detection_latest_gpu/Use_case/autolabel/autolabel/6406_3_3_3972_3972,24.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>265</width>
+		<height>608</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>autolabel</folder>
+	<filename>6406_3_3_3959_3960.jpg</filename>
+	<path>/home/dennis/anaconda3/envs/gputest/models/research/object_detection_latest_gpu/Use_case/autolabel/autolabel/6406_3_3_3959_3960.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>265</width>
+		<height>2193</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>hplug</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>112</xmin>
+			<ymin>1683</ymin>
+			<xmax>225</xmax>
+			<ymax>1771</ymax>
+		</bndbox>
+	</object>
+	</annotation>

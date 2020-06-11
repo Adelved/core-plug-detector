@@ -1,0 +1,12 @@
+item{
+    id: 1
+    name: "hplug"
+}
+item{
+    id: 2
+    name: "vplug"
+}
+item{
+    id: 3
+    name: "scal"
+}
