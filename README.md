@@ -8,3 +8,23 @@ The data used to train and evaluate the various models, and the pipeline configu
 [Final Model (run1)](https://console.cloud.google.com/storage/browser/full-model/final-model/)
 
 [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/)
+
+
+## Further Training and auto-Labeling
+This section requires the user to install Tensorflow and setup the Tensorflow Object Detection Environment, which can be done by following the [installation documentation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html). The following bullet points summarizes the installation steps necessary in order setup the enviornment with links to their locations in the documentation:
+
+#### setup
+* [Install Tensorflow](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-installation). Both CPU and GPU support is available.
+* [Install Tensorflow Models](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#tensorflow-models-installation) and complete the following steps in the documentation:
+  * Install prerequisites
+  * Download the TensorFlow models
+  * Protobuf installation/compilation
+  * Adding necessary Environment Variables
+  * COCO API installation
+  * Test installation
+* If creating a new dataset, consult the [labelImg installation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html#labelimg-installation) and follow the data processing steps outlined in the project report. Alternatively, follow the [documentation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html) according to the following steps:
+  * Preparing workspace
+  * Annotating images
+  * Creating label map
+  * Creating TensorFlow records (xml to csv and csv to tfrecord)
+
