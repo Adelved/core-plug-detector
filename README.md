@@ -29,11 +29,10 @@ In order to fine-tune the weights of the final model, i.e. the model used in the
 
 
 ### Auto-labeling and Inference demo
-A demo for both the auto-labeling tool and for visualizing the model predictions 
+A demo for both the auto-labeling tool and for visualizing the model predictions has been made, which can be downloaded and used. The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo. When this is done, [auto-label Notebook](the auto_label_core_plugs.ipynb) can be run to generate the labels. 
 
 
 
-[Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/)
 
 
 
