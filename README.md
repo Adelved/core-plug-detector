@@ -31,11 +31,11 @@ In order to fine-tune the weights of the final model, i.e. the model used in the
 
 ### Auto-labeling and Inference demo
 A demo for both the auto-labeling functionality and pixel-depth map functionality has been made, which can be downloaded and used. Both require the installation of the tensorflow setup above and can be directly downloaded and tested with the sample data provided. Both demos uses CPU for inference which is slower, but does not require GPU support or setup for the user. For larger data sets, it is recommended to use GPU support and both demos can be reverted back to GPU by removing the following lines of code in both notebooks:
-'''python     
+```python     
 	>for op in ops: 
             >op._set_device('/device:CPU:*')  
 
-'''
+```
 
 #### Auto-labeling
 The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](the auto_label_core_plugs.ipynb) can be run to generate the labels.
