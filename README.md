@@ -32,8 +32,8 @@ In order to fine-tune the weights of the final model, i.e. the model used in the
 ### Auto-labeling and Inference demo
 A demo for both the auto-labeling functionality and pixel-depth map functionality has been made, which can be downloaded and used. Both require the installation of the tensorflow setup above and can be directly downloaded and tested with the sample data provided. Both demos uses CPU for inference which is slower, but does not require GPU support or setup for the user. For larger data sets, it is recommended to use GPU support and both demos can be reverted back to GPU by removing the following lines of code in both notebooks:
 '''python     
-	for op in ops: 
-            op._set_device('/device:CPU:*')  
+	>for op in ops: 
+            >op._set_device('/device:CPU:*')  
 
 '''
 
