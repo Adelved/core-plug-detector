@@ -25,22 +25,23 @@ This section requires to install Tensorflow and setup the Tensorflow Object Dete
 ### Further Training
 In order to train the model from the original weights, the following directory ([Faster_RCNN_Inception_Resnet_V2_atrous_COCO_2018_01_28](https://console.cloud.google.com/storage/browser/full-model/faster_rcnn_inception_resnet_v2_atrous_coco_2018_01_28/)) should be downloaded, and the "fine_tune_checkpoint:" option in the configuration file should be changed to the path to this directory.
 
-In order to fine-tune the weights of the final model, i.e. the model used in the fine-tuning approach in the thesis, the following directory ([Final Model (run1)](https://console.cloud.google.com/storage/browser/full-model/final-model/)) should be downloaded, and the "fine_tune_checkpoint:" option in the configuration file hsould be changed to the path to this directory.
+In order to fine-tune the weights of the final model, i.e. the model used in the fine-tuning approach in the thesis, the following directory ([Final Model (run1)](https://console.cloud.google.com/storage/browser/full-model/final-model/)) should be downloaded, and the "fine_tune_checkpoint:" option in the configuration file should be changed to the path to this directory.
+
 
 
 ### Auto-labeling and Inference demo
-A demo for both the auto-labeling tool and for visualizing the model predictions has been made, which can be downloaded and used. The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo. When this is done, [auto-label Notebook](the auto_label_core_plugs.ipynb) can be run to generate the labels. 
+A demo for both the auto-labeling functionality and pixel-depth map functionality has been made, which can be downloaded and used. Both require the installation of the tensorflow setup above and can be directly downloaded and tested with the sample data provided. Both demos uses CPU for inference which is slower, but does not require GPU support or setup for the user. For larger data sets, it is recommended to use GPU support and both demos can be reverted back to GPU by removing:
+function test(){
+console.log("notice me")
+}
+#### Auto-labeling
+The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](the auto_label_core_plugs.ipynb) can be run to generate the labels.
+
+In order to generate labels for a new data set, fine-tune the model on a data set -> export inference graph -> change path to inference graph in the notebook. 
 
 
 
-
-
-
-
-
-
-
-#### auto-labeling
+###" Pixel-Depth mapping demo
 The inference graph for the M2 model has been frozen and exported so that inference can be done on new core images, as can be seen in the modified object detection tutorial [notebook](inference/object_detection_tutorial_modified.ipynb). The notebook shows inference performed on three optical core images, and the cropped result using the predicted bounding boxes from M2 is saved in the [cropped_output](inference/M2_inference_graph/cropped_output) folder. The notebook and the inference graph can be downloaded and used to perform inference and cropping with the following steps:
 
   * Download the [inference](inference) folder
