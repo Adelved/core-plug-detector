@@ -46,20 +46,23 @@ MODEL_NAME = 'path/to/folder_of_exported_inference_graph'
 ```
 
 #### Pixel-Depth mapping demo
-The [auto pixel-depth mapping demo](auto_pixel_depth_mapping_demo) contains a .csv file which contains the predicted core plug classes with their location in pixels along the height of the core image, the estimated depth and source image used for the prediction:
+The [auto pixel-depth mapping demo](auto_pixel_depth_mapping_demo) demonstrates the concept of the pixel-depth mapping functionality. The notebook uses predictions from the network and the depth interval defined in the image files to create the mapping. The output is a .csv file which contains the predicted core plug classes with their location in pixels along the height of the core image, the estimated depth and source image used for the prediction, which can be used to correlate with other data sources. The table below shows the first rows of the generated pixel_depth_map.csv file for the easy test set.
+
 | index | Plug Type | Depth       | Pixel Location | Source Image                  |
 |-------|-----------|-------------|----------------|-------------------------------|
-|     0 |     hplug | 3701.016613 |           41.0 | images/6407_1_3_3701_3702.jpg |
-|     1 |     vplug | 3701.025527 |           63.0 | images/6407_1_3_3701_3702.jpg |
-|     2 |      scal | 3701.092180 |          227.5 | images/6407_1_3_3701_3702.jpg |
-|     3 |     hplug | 3701.322326 |          795.5 | images/6407_1_3_3701_3702.jpg |
-|     4 |     vplug | 3701.663898 |         1638.5 | images/6407_1_3_3701_3702.jpg |
-|     5 |      scal | 3702.094194 |          232.0 | images/6407_1_3_3702_3703.jpg |
+|     0 |     vplug | 3632.026906 |           66.0 | images/6407_1_3_3632_3633.jpg |
+|     1 |     hplug | 3632.052385 |          128.5 | images/6407_1_3_3632_3633.jpg |
+|     2 |     vplug | 3632.324093 |          795.0 | images/6407_1_3_3632_3633.jpg |
+|     3 |     hplug | 3632.328577 |          806.0 | images/6407_1_3_3632_3633.jpg |
+|     4 |     hplug | 3632.757440 |         1858.0 | images/6407_1_3_3632_3633.jpg |
+|     5 |     vplug | 3632.798410 |         1958.5 | images/6407_1_3_3632_3633.jpg |
+|     6 |     vplug | 3632.917652 |         2251.0 | images/6407_1_3_3632_3633.jpg |
+|     7 |     hplug | 3632.974725 |         2391.0 | images/6407_1_3_3632_3633.jpg |
 
-In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](auto_label_demo/the_auto_label_core_plugs.ipynb) can be run to generate the labels.
+In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_pixel_depth_mapping_demo folder. When this is done, [pixel-depth mapping Notebook](auto_pixel_depth_mapping_demo/Pixel_depth_mapping_demo.ipynb) can be run to generate the .csv file.
 
-In order to generate labels for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
+In order to generate pixel-depth mapping for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
 ```python
 MODEL_NAME = 'path/to/folder_of_exported_inference_graph'
+```
 
-####
