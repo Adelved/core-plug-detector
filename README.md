@@ -32,26 +32,34 @@ In order to fine-tune the weights of the final model, i.e. the model used in the
 ### Auto-labeling and Inference demo
 A demo for both the auto-labeling functionality and pixel-depth map functionality has been made, which can be downloaded and used. Both require the installation of the tensorflow setup above and can be directly downloaded and tested with the sample data provided. Both demos uses CPU for inference which is slower, but does not require GPU support or setup for the user. For larger data sets, it is recommended to use GPU support and both demos can be reverted back to GPU by removing the following lines of code in both notebooks:
 ```python     
-	>for op in ops: 
-            >op._set_device('/device:CPU:*')  
+	for op in ops: 
+            op._set_device('/device:CPU:*')  
 
 ```
 
 #### Auto-labeling
-The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](the auto_label_core_plugs.ipynb) can be run to generate the labels.
+The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](auto_label_demo/the_auto_label_core_plugs.ipynb) can be run to generate the labels.
 
-In order to generate labels for a new data set, fine-tune the model on a data set -> export inference graph -> change path to inference graph in the notebook. 
+In order to generate labels for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
+```python
+MODEL_NAME = 'path/to/folder_of_exported_inference_graph'
+```
 
+#### Pixel-Depth mapping demo
+The [auto pixel-depth mapping demo](auto_pixel_depth_mapping_demo) contains a .csv file which contains the predicted core plug classes with their location in pixels along the height of the core image, the estimated depth and source image used for the prediction:
+| index | Plug Type | Depth       | Pixel Location | Source Image                  |
+|-------|-----------|-------------|----------------|-------------------------------|
+|     0 |     hplug | 3701.016613 |           41.0 | images/6407_1_3_3701_3702.jpg |
+|     1 |     vplug | 3701.025527 |           63.0 | images/6407_1_3_3701_3702.jpg |
+|     2 |      scal | 3701.092180 |          227.5 | images/6407_1_3_3701_3702.jpg |
+|     3 |     hplug | 3701.322326 |          795.5 | images/6407_1_3_3701_3702.jpg |
+|     4 |     vplug | 3701.663898 |         1638.5 | images/6407_1_3_3701_3702.jpg |
+|     5 |      scal | 3702.094194 |          232.0 | images/6407_1_3_3702_3703.jpg |
 
+In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](auto_label_demo/the_auto_label_core_plugs.ipynb) can be run to generate the labels.
 
-###" Pixel-Depth mapping demo
-The inference graph for the M2 model has been frozen and exported so that inference can be done on new core images, as can be seen in the modified object detection tutorial [notebook](inference/object_detection_tutorial_modified.ipynb). The notebook shows inference performed on three optical core images, and the cropped result using the predicted bounding boxes from M2 is saved in the [cropped_output](inference/M2_inference_graph/cropped_output) folder. The notebook and the inference graph can be downloaded and used to perform inference and cropping with the following steps:
-
-  * Download the [inference](inference) folder
-  * Move the [notebook](inference/object_detection_tutorial_modified.ipynb) and the [M2_inference_graph](inference/M2_inference_graph) folder into models/research/object_detection
-  * Add the optical core images to perform inference on in models/research/object_detection/M2_inference_graph/image
-  * Start jupyter notebook from the object_detection directory
-  * Perform inference by running the notebook
-
+In order to generate labels for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
+```python
+MODEL_NAME = 'path/to/folder_of_exported_inference_graph'
 
 ####
