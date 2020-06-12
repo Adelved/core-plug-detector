@@ -38,7 +38,7 @@ A demo for both the auto-labeling functionality and pixel-depth map functionalit
 ```
 
 #### Auto-labeling
-The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](auto_label_demo/the_auto_label_core_plugs.ipynb) can be run to generate the labels.
+The [auto-labeling demo](auto_labeling_demo) shows the auto-labeled core plugs on the easy test set, which can be opened and inspected using lableImage. In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-demo/), and placed inside auto_labeling_demo folder. When this is done, [auto-label Notebook](auto_label_demo/the_auto_label_core_plugs.ipynb) can be run to generate the labels.
 
 In order to generate labels for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
 ```python
@@ -59,7 +59,7 @@ The [auto pixel-depth mapping demo](auto_pixel_depth_mapping_demo) demonstrates 
 |     6 |     vplug | 3632.917652 |         2251.0 | images/6407_1_3_3632_3633.jpg |
 |     7 |     hplug | 3632.974725 |         2391.0 | images/6407_1_3_3632_3633.jpg |
 
-In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-auto-labeling/), and placed inside auto_pixel_depth_mapping_demo folder. When this is done, [pixel-depth mapping Notebook](auto_pixel_depth_mapping_demo/Pixel_depth_mapping_demo.ipynb) can be run to generate the .csv file.
+In order to use the demo, the exported inference graph of the fine-tuned model must be downloaded from the following directory, [Fine-Tuned Model (run4)](https://console.cloud.google.com/storage/browser/full-model/inference-graph-demo/), and placed inside auto_pixel_depth_mapping_demo folder. When this is done, [pixel-depth mapping Notebook](auto_pixel_depth_mapping_demo/Pixel_depth_mapping_demo.ipynb) can be run to generate the .csv file.
 
 In order to generate pixel-depth mapping for a new data set: fine-tune the model on a data set using a few hand-labeled examples -> export inference graph -> change path to inference graph in the notebook.
 ```python
